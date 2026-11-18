@@ -1,0 +1,216 @@
+﻿/* =========================================
+   PORTFOLIO HERO
+   Portrait on left, information on right
+   ========================================= */
+
+.portfolio-intro.portfolio-hero {
+    display: grid;
+    grid-template-columns: minmax(220px, .38fr) minmax(0, 1fr);
+    grid-template-areas: "portrait content";
+    align-items: center;
+    gap: clamp(1.5rem, 4vw, 3.5rem);
+    min-height: 360px;
+    padding: clamp(1.75rem, 4vw, 3rem);
+    text-align: left;
+    color: #f8fafc;
+    background: radial-gradient(circle at 85% 15%, rgba(47, 160, 220, .22), transparent 28%), linear-gradient(125deg, #08182d, #153d60 70%, #10243d);
+    border: 1px solid rgba(100, 190, 240, .3);
+    border-radius: 1.25rem;
+    box-shadow: 0 18px 45px rgba(15, 35, 65, .17);
+}
+
+.portfolio-hero-copy {
+    grid-area: content;
+    min-width: 0;
+}
+
+.portfolio-hero .eyebrow {
+    color: #86d8ff;
+}
+
+.portfolio-hero h1 {
+    color: #ffffff;
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    line-height: 1.05;
+    letter-spacing: -.045em;
+}
+
+.portfolio-hero .lead {
+    color: #65c8f4;
+    font-size: clamp(1.25rem, 3vw, 1.75rem);
+    font-weight: 600;
+}
+
+.portfolio-hero .intro-copy {
+    max-width: 48rem;
+    margin-left: 0;
+    margin-right: 0;
+    color: #d5e4f3 !important;
+    line-height: 1.7;
+}
+
+/* Portrait */
+
+.hero-portrait-wrap {
+    grid-area: portrait;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+}
+
+.hero-portrait-frame {
+    position: relative;
+    width: min(100%, 280px);
+    aspect-ratio: 4 / 5;
+    padding: 7px;
+    overflow: hidden;
+    background: linear-gradient(145deg, #48d7ff, #147bc4, #254a83);
+    border-radius: 1.25rem;
+    box-shadow: 0 0 0 1px rgba(110, 220, 255, .3), 0 15px 40px rgba(0, 0, 0, .35), 0 0 35px rgba(30, 165, 240, .2);
+}
+
+    .hero-portrait-frame img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center 30%;
+        border-radius: .9rem;
+    }
+
+.hero-portrait-caption {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .75rem;
+    width: 100%;
+    color: #ffffff;
+}
+
+.portrait-caption-mark {
+    display: grid;
+    place-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: .65rem;
+    background: linear-gradient(135deg, #168cdb, #07518d);
+    font-weight: 800;
+}
+
+.hero-portrait-caption small {
+    display: block;
+    margin-top: .15rem;
+    color: #b9d4e9;
+    font-size: .8rem;
+}
+
+/* Hero buttons */
+
+.hero-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: .65rem;
+    min-height: 45px;
+    padding: .7rem 1.1rem;
+    border-radius: .6rem;
+    border: 1px solid transparent;
+    font-size: .9rem;
+    font-weight: 650;
+    text-decoration: none;
+    transition: transform .2s ease, background-color .2s ease, box-shadow .2s ease;
+}
+
+    .hero-button:hover {
+        transform: translateY(-2px);
+    }
+
+.hero-button-primary {
+    color: #ffffff;
+    background: #168cdb;
+    box-shadow: 0 7px 20px rgba(0, 110, 210, .25);
+}
+
+    .hero-button-primary:hover {
+        color: #ffffff;
+        background: #0877c2;
+    }
+
+.hero-button-secondary {
+    color: #ffffff;
+    border-color: rgba(220, 240, 255, .65);
+    background: rgba(255, 255, 255, .06);
+}
+
+    .hero-button-secondary:hover {
+        color: #ffffff;
+        background: rgba(255, 255, 255, .15);
+    }
+
+
+/* Specialism labels */
+
+.hero-specialisms {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5rem;
+    margin-top: 1.5rem;
+}
+
+    .hero-specialisms span {
+        padding: .4rem .75rem;
+        color: #bceaff;
+        background: rgba(31, 149, 211, .13);
+        border: 1px solid rgba(104, 202, 247, .3);
+        border-radius: 2rem;
+        font-size: .76rem;
+        font-weight: 600;
+    }
+
+/* =========================================
+   MOBILE AND TABLET — PORTRAIT ABOVE CONTENT
+   ========================================= */
+
+@media (max-width: 800px) {
+
+    .portfolio-intro.portfolio-hero {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 1.5rem;
+        padding: 1.5rem;
+        text-align: center;
+    }
+
+    .hero-portrait-wrap {
+        order: -1;
+        width: 100%;
+    }
+
+    .hero-portrait-frame {
+        width: min(65%, 220px);
+    }
+
+    .portfolio-hero-copy {
+        width: 100%;
+    }
+
+    .portfolio-hero .intro-copy {
+        margin-inline: auto;
+    }
+
+    .hero-actions,
+    .hero-specialisms {
+        justify-content: center;
+    }
+}
+
+/* Reduced motion */
+
+@media (prefers-reduced-motion: reduce) {
+    .hero-button {
+        transition: none;
+    }
+}

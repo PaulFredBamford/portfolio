@@ -1,0 +1,755 @@
+﻿/* =========================================
+   COMPANY WEBSITE AND LINKEDIN LINKS
+   ========================================= */
+
+.company-links {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    margin-bottom: 1rem;
+}
+
+.company-link-icon {
+    display: inline-grid;
+    place-items: center;
+    width: 34px;
+    height: 34px;
+    color: var(--colour-accent);
+    background: var(--colour-surface);
+    border: 1px solid var(--colour-border);
+    border-radius: .55rem;
+    transition: color .2s ease, background .2s ease, transform .2s ease;
+}
+
+    .company-link-icon svg {
+        width: 17px;
+        height: 17px;
+        fill: none;
+        stroke: currentColor;
+        stroke-width: 1.7px;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+    }
+
+    .company-link-icon:hover {
+        color: #ffffff;
+        background: var(--colour-accent);
+        transform: translateY(-2px);
+    }
+
+    .company-link-icon:focus-visible {
+        outline: 2px solid var(--colour-accent);
+        outline-offset: 3px;
+    }
+
+/* Historical company ownership note */
+
+.company-history-note {
+    margin-top: 1rem;
+    padding: .85rem 1rem;
+    color: var(--colour-muted);
+    background: var(--colour-background);
+    border-left: 3px solid var(--colour-accent);
+    border-radius: 0 .5rem .5rem 0;
+    font-size: .85rem;
+    line-height: 1.65;
+}
+/* =========================================
+   EMPLOYER LINKS — RIGHT ALIGNMENT
+   ========================================= */
+
+/* Links displayed in employment headings */
+
+.nested-disclosure > summary > .company-links {
+    margin: 0 0 0 auto;
+    flex-shrink: 0;
+    justify-content: flex-end;
+}
+
+/* Earlier career entries */
+
+.career-entry-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.career-entry-details {
+    flex: 1;
+    min-width: 0;
+}
+
+    .career-entry-details h3 {
+        margin-top: 0 !important;
+        margin-bottom: .4rem;
+    }
+
+    .career-entry-details p {
+        margin-bottom: 0;
+    }
+
+.career-entry-heading > .company-links {
+    flex-shrink: 0;
+    margin: 0;
+    justify-content: flex-end;
+}
+
+@media (max-width: 480px) {
+    .career-entry-heading {
+        align-items: flex-start;
+        gap: .75rem;
+    }
+}
+
+/* =========================================
+   RESEARCH ACHIEVEMENT
+   ========================================= */
+
+.achievement-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1.25rem;
+}
+
+.achievement-organisation {
+    color: var(--colour-muted);
+    font-size: .9rem;
+    font-weight: 600;
+}
+
+.achievement-heading .company-links {
+    flex-shrink: 0;
+    margin: 0;
+}
+
+.achievement-highlight {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.25rem;
+    padding: 1.25rem;
+    background: var(--colour-background);
+    border: 1px solid var(--colour-border);
+    border-left: 4px solid var(--colour-accent);
+    border-radius: .75rem;
+}
+
+.achievement-icon {
+    display: grid;
+    place-items: center;
+    flex: 0 0 46px;
+    width: 46px;
+    height: 46px;
+    color: var(--colour-accent);
+    background: var(--colour-surface);
+    border: 1px solid var(--colour-border);
+    border-radius: .7rem;
+}
+
+    .achievement-icon svg {
+        width: 25px;
+        height: 25px;
+        fill: none;
+        stroke: currentColor;
+        stroke-width: 1.7;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+    }
+
+.achievement-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.achievement-role-label {
+    display: inline-block;
+    margin-bottom: .75rem;
+    color: var(--colour-accent);
+    font-size: .8rem;
+    font-weight: 750;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+}
+
+.achievement-content p {
+    margin-bottom: .75rem;
+    line-height: 1.75;
+}
+
+    .achievement-content p:last-child {
+        margin-bottom: 0;
+    }
+
+@media (max-width: 480px) {
+    .achievement-heading {
+        align-items: flex-start;
+    }
+
+    .achievement-highlight {
+        gap: .75rem;
+        padding: 1rem;
+    }
+
+    .achievement-icon {
+        flex-basis: 38px;
+        width: 38px;
+        height: 38px;
+    }
+
+        .achievement-icon svg {
+            width: 21px;
+            height: 21px;
+        }
+}
+
+
+/* =========================================
+   CATALYST RESEARCH PRESENTATION
+   ========================================= */
+
+.achievement-intro {
+    margin-bottom: 1.75rem;
+    font-size: 1.05rem;
+    line-height: 1.8;
+}
+
+.catalyst-section {
+    margin-top: 1.75rem;
+}
+
+.catalyst-section-heading {
+    margin-bottom: 1rem;
+}
+
+.achievement-section-label {
+    display: inline-block;
+    margin-bottom: .4rem;
+    color: var(--colour-accent);
+    font-size: .72rem;
+    font-weight: 750;
+    letter-spacing: .13em;
+}
+
+.catalyst-section-heading h4 {
+    margin: 0 0 .45rem !important;
+    font-size: 1.2rem;
+}
+
+.catalyst-section-heading > p {
+    margin: 0;
+    color: var(--colour-muted);
+    font-size: .9rem;
+    line-height: 1.65;
+}
+
+/* Catalyst components */
+
+.catalyst-components {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr) auto minmax(0, 1fr);
+    align-items: stretch;
+    gap: .65rem;
+}
+
+.catalyst-component {
+    min-width: 0;
+    padding: 1rem;
+    background: var(--colour-surface);
+    border: 1px solid var(--colour-border);
+    border-radius: .8rem;
+}
+
+.catalyst-result {
+    border-color: var(--colour-accent);
+    background: var(--colour-background);
+}
+
+.catalyst-diagram {
+    display: grid;
+    place-items: center;
+    height: 105px;
+    margin-bottom: .75rem;
+    color: var(--colour-accent);
+    background: var(--colour-background);
+    border: 1px solid var(--colour-border);
+    border-radius: .6rem;
+}
+
+    .catalyst-diagram svg {
+        display: block;
+        width: min(100%, 145px);
+        height: 90px;
+    }
+
+.catalyst-component h5 {
+    margin: 0 0 .4rem;
+    color: var(--colour-text);
+    font-size: .95rem;
+    font-weight: 700;
+}
+
+.catalyst-component p {
+    margin: 0;
+    color: var(--colour-muted);
+    font-size: .83rem;
+    line-height: 1.65;
+}
+
+.catalyst-operation {
+    display: grid;
+    place-items: center;
+    color: var(--colour-accent);
+    font-size: 1.6rem;
+    font-weight: 500;
+}
+
+.catalyst-diagram-note {
+    margin: .65rem 0 0;
+    color: var(--colour-muted);
+    font-size: .72rem;
+    font-style: italic;
+}
+
+/* Experimental workflow */
+
+.catalyst-testing {
+    padding: 1.25rem;
+    background: var(--colour-background);
+    border: 1px solid var(--colour-border);
+    border-radius: .85rem;
+}
+
+.catalyst-workflow {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr) auto minmax(0, 1fr);
+    align-items: center;
+    gap: .65rem;
+    margin-top: 1.25rem;
+}
+
+.catalyst-workflow-step {
+    min-width: 0;
+    height: 100%;
+    padding: 1rem;
+    background: var(--colour-surface);
+    border: 1px solid var(--colour-border);
+    border-radius: .7rem;
+}
+
+.workflow-icon {
+    display: grid;
+    place-items: center;
+    width: 48px;
+    height: 48px;
+    margin-bottom: .75rem;
+    color: var(--colour-accent);
+    background: var(--colour-background);
+    border: 1px solid var(--colour-border);
+    border-radius: .65rem;
+}
+
+    .workflow-icon svg {
+        width: 34px;
+        height: 34px;
+    }
+
+.workflow-number {
+    color: var(--colour-accent);
+    font-size: .7rem;
+    font-weight: 750;
+    letter-spacing: .12em;
+}
+
+.catalyst-workflow-step h5 {
+    margin: .3rem 0 .5rem;
+    color: var(--colour-text);
+    font-size: .95rem;
+    font-weight: 700;
+}
+
+.catalyst-workflow-step p {
+    margin: 0;
+    color: var(--colour-muted);
+    font-size: .82rem;
+    line-height: 1.65;
+}
+
+.workflow-arrow {
+    color: var(--colour-accent);
+    font-size: 1.35rem;
+}
+
+.workflow-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .35rem;
+    margin-top: .8rem;
+}
+
+    .workflow-tags span {
+        padding: .25rem .45rem;
+        color: var(--colour-accent);
+        background: var(--colour-background);
+        border: 1px solid var(--colour-border);
+        border-radius: 1rem;
+        font-size: .65rem;
+        font-weight: 650;
+    }
+
+/* Outcome */
+
+.catalyst-outcome {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-top: 1.5rem;
+    padding: 1.2rem;
+    background: var(--colour-background);
+    border: 1px solid var(--colour-border);
+    border-left: 4px solid var(--colour-accent);
+    border-radius: .75rem;
+}
+
+.outcome-icon {
+    display: grid;
+    place-items: center;
+    flex: 0 0 40px;
+    width: 40px;
+    height: 40px;
+    color: var(--colour-accent);
+    background: var(--colour-surface);
+    border: 1px solid var(--colour-border);
+    border-radius: .65rem;
+}
+
+    .outcome-icon svg {
+        width: 23px;
+        height: 23px;
+        fill: none;
+        stroke: currentColor;
+        stroke-width: 1.8;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+    }
+
+.catalyst-outcome p {
+    margin: 0 0 .65rem;
+    line-height: 1.7;
+}
+
+    .catalyst-outcome p:last-child {
+        margin-bottom: 0;
+    }
+
+/* Mobile */
+
+@media (max-width: 700px) {
+
+    .catalyst-components {
+        grid-template-columns: minmax(0, 1fr);
+        gap: .6rem;
+    }
+
+    .catalyst-component {
+        display: grid;
+        grid-template-columns: 90px minmax(0, 1fr);
+        grid-template-rows: auto auto;
+        column-gap: 1rem;
+        align-items: center;
+        padding: .75rem;
+    }
+
+    .catalyst-diagram {
+        grid-column: 1;
+        grid-row: 1 / 3;
+        height: 90px;
+        margin: 0;
+    }
+
+        .catalyst-diagram svg {
+            width: 90px;
+            height: 75px;
+        }
+
+    .catalyst-component h5 {
+        align-self: end;
+    }
+
+    .catalyst-component p {
+        align-self: start;
+    }
+
+    .catalyst-operation {
+        height: 15px;
+        font-size: 1.1rem;
+        line-height: 1;
+    }
+
+    .catalyst-workflow {
+        grid-template-columns: minmax(0, 1fr);
+        gap: .5rem;
+    }
+
+    .catalyst-workflow-step {
+        display: grid;
+        grid-template-columns: 48px minmax(0, 1fr);
+        column-gap: .85rem;
+        padding: .85rem;
+    }
+
+    .workflow-icon {
+        grid-column: 1;
+        grid-row: 1 / 4;
+        margin: 0;
+    }
+
+    .workflow-number,
+    .catalyst-workflow-step h5,
+    .catalyst-workflow-step p,
+    .workflow-tags {
+        grid-column: 2;
+    }
+
+    .workflow-arrow {
+        text-align: center;
+        transform: rotate(90deg);
+    }
+}
+
+/* Very narrow screens */
+
+@media (max-width: 380px) {
+
+    .catalyst-component {
+        grid-template-columns: 76px minmax(0, 1fr);
+    }
+
+    .catalyst-diagram svg {
+        width: 76px;
+    }
+
+    .catalyst-testing {
+        padding: .85rem;
+    }
+}
+
+/* =========================================
+   PHARMACEUTICAL FILTRATION ACHIEVEMENT
+   ========================================= */
+
+.filtration-section {
+    margin-top: 1.75rem;
+}
+
+.filtration-material-card,
+.filtration-process-card {
+    display: grid;
+    grid-template-columns: 180px minmax(0, 1fr);
+    align-items: center;
+    gap: 1.25rem;
+    padding: 1rem;
+    background: var(--colour-surface);
+    border: 1px solid var(--colour-border);
+    border-radius: .8rem;
+}
+
+.filtration-material-card {
+    border-left: 4px solid var(--colour-accent);
+}
+
+.filtration-illustration,
+.filtration-process-diagram {
+    display: grid;
+    place-items: center;
+    min-height: 110px;
+    padding: .5rem;
+    color: var(--colour-accent);
+    background: var(--colour-background);
+    border: 1px solid var(--colour-border);
+    border-radius: .65rem;
+}
+
+    .filtration-illustration svg,
+    .filtration-process-diagram svg {
+        display: block;
+        width: 100%;
+        max-width: 180px;
+        height: auto;
+    }
+
+.filtration-material-copy h5,
+.filtration-process-copy h5 {
+    margin: .3rem 0 .5rem;
+    color: var(--colour-text);
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.filtration-material-copy p,
+.filtration-process-copy p {
+    margin: 0;
+    color: var(--colour-muted);
+    font-size: .9rem;
+    line-height: 1.7;
+}
+
+/* Bead comparison */
+
+.filtration-comparison {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+    align-items: center;
+    gap: 1rem;
+}
+
+.filtration-comparison-card {
+    min-width: 0;
+    height: 100%;
+    padding: 1.1rem;
+    background: var(--colour-surface);
+    border: 1px solid var(--colour-border);
+    border-radius: .8rem;
+}
+
+.filtration-improved {
+    border-color: var(--colour-accent);
+    background: var(--colour-background);
+}
+
+.comparison-label {
+    color: var(--colour-muted);
+    font-size: .7rem;
+    font-weight: 750;
+    letter-spacing: .1em;
+}
+
+.filtration-improved .comparison-label {
+    color: var(--colour-accent);
+}
+
+.filtration-comparison-card h5 {
+    margin: .4rem 0;
+    color: var(--colour-text);
+    font-size: .95rem;
+    font-weight: 700;
+}
+
+.bead-illustration {
+    display: grid;
+    place-items: center;
+    min-height: 90px;
+    margin: .65rem 0;
+    color: var(--colour-muted);
+    background: var(--colour-background);
+    border: 1px solid var(--colour-border);
+    border-radius: .6rem;
+}
+
+    .bead-illustration svg {
+        display: block;
+        width: 100%;
+        max-width: 180px;
+        height: auto;
+    }
+
+.filtration-comparison-card p {
+    margin: 0;
+    color: var(--colour-muted);
+    font-size: .85rem;
+    line-height: 1.65;
+}
+
+.filtration-comparison-arrow {
+    color: var(--colour-accent);
+    font-size: 1.5rem;
+}
+
+.filtration-diagram-note {
+    margin-top: 1rem;
+    color: var(--colour-muted);
+    font-size: .75rem;
+    font-style: italic;
+    line-height: 1.5;
+}
+
+/* Responsive layout */
+
+@media (max-width: 640px) {
+
+    .filtration-material-card,
+    .filtration-process-card {
+        grid-template-columns: minmax(0, 1fr);
+        gap: .85rem;
+    }
+
+    .filtration-illustration,
+    .filtration-process-diagram {
+        min-height: 100px;
+    }
+
+    .filtration-comparison {
+        grid-template-columns: minmax(0, 1fr);
+        gap: .65rem;
+    }
+
+    .filtration-comparison-arrow {
+        transform: rotate(90deg);
+        text-align: center;
+        font-size: 1.2rem;
+    }
+}
+
+/* =========================================
+   EMPLOYMENT DISCLOSURE HEADING
+   Two-row layout: title/links, date/arrow
+   ========================================= */
+
+.nested-disclosure > summary:has(> .company-links) {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-rows: auto auto;
+    align-items: center;
+    column-gap: 1rem;
+    row-gap: .35rem;
+}
+
+    /* Job title — top left */
+
+    .nested-disclosure > summary:has(> .company-links) > span:first-child {
+        grid-column: 1;
+        grid-row: 1;
+        min-width: 0;
+    }
+
+    /* Website and LinkedIn — top right */
+
+    .nested-disclosure > summary:has(> .company-links) > .company-links {
+        grid-column: 2;
+        grid-row: 1;
+        justify-self: end;
+        align-self: center;
+        margin: 0;
+    }
+
+    /* Location and dates — bottom left */
+
+    .nested-disclosure > summary:has(> .company-links) > small {
+        grid-column: 1;
+        grid-row: 2;
+        align-self: center;
+        flex-basis: auto;
+        margin: 0;
+    }
+
+    /* Expand/collapse arrow — bottom right */
+
+    .nested-disclosure > summary:has(> .company-links)::after {
+        grid-column: 2;
+        grid-row: 2;
+        justify-self: end;
+        align-self: center;
+        margin-left: 0;
+    }

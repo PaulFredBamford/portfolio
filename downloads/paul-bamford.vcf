@@ -1,0 +1,10 @@
+BEGIN:VCARD
+VERSION:3.0
+N:Bamford;Paul;;;
+FN:Paul Bamford
+TITLE:Full Stack .NET Software Developer
+TEL;TYPE=CELL,VOICE:+447564669483
+EMAIL;TYPE=INTERNET:paulbamford101@gmail.com
+URL;TYPE=WORK:https://paulfredbamford.github.io/portfolio/
+URL;TYPE=OTHER:https://www.linkedin.com/in/paul-bamford-3462a123/
+END:VCARD

@@ -1,0 +1,471 @@
+﻿
+/* =========================================
+   PROJECT LIST
+   ========================================= */
+
+.project-list {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.5rem;
+}
+
+.project-card {
+    min-width: 0;
+    overflow: hidden;
+    background: var(--colour-surface);
+    border: 1px solid var(--colour-border);
+    border-radius: 1rem;
+    box-shadow: 0 5px 18px rgba(15, 40, 70, .07);
+    transition: border-color .2s ease, box-shadow .2s ease;
+}
+
+    .project-card:hover,
+    .project-card[open] {
+        border-color: var(--colour-accent);
+    }
+
+    .project-card[open] {
+        box-shadow: 0 12px 30px rgba(15, 40, 70, .11);
+    }
+
+/* =========================================
+   PROJECT COLLAPSIBLE HEADING
+   ========================================= */
+
+.project-card-summary {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    min-height: 115px;
+    padding: 1.5rem 5rem 1.5rem 1.5rem;
+    box-sizing: border-box;
+    list-style: none;
+    cursor: pointer;
+}
+
+    .project-card-summary::-webkit-details-marker {
+        display: none;
+    }
+
+.project-heading {
+    min-width: 0;
+}
+
+.project-category {
+    display: block;
+    margin-bottom: .5rem;
+    color: var(--colour-accent);
+    font-size: .75rem;
+    font-weight: 750;
+    letter-spacing: .12em;
+}
+
+.project-heading h3 {
+    margin: 0 0 .5rem;
+    color: var(--colour-text);
+    font-size: clamp(1.25rem, 2.5vw, 1.6rem);
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+.project-heading p {
+    margin: 0;
+    color: var(--colour-muted);
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* Expand / collapse indicator */
+
+.project-card-summary::after {
+    content: "+";
+    position: absolute;
+    top: 50%;
+    right: 1.5rem;
+    transform: translateY(-50%);
+    display: grid;
+    place-items: center;
+    width: 38px;
+    height: 38px;
+    color: var(--colour-accent);
+    background: var(--colour-background);
+    border: 1px solid var(--colour-border);
+    border-radius: 50%;
+    font-size: 1.4rem;
+    transition: transform .2s ease;
+}
+
+.project-card[open] > .project-card-summary::after {
+    content: "−";
+    transform: translateY(-50%);
+}
+
+.project-card-summary:hover {
+    background: var(--colour-background);
+}
+
+.project-card-summary:focus-visible {
+    outline: 3px solid var(--colour-accent);
+    outline-offset: -3px;
+}
+
+/* =========================================
+   PROJECT DETAILS
+   ========================================= */
+
+.project-card-content {
+    min-width: 0;
+    padding: clamp(1.25rem, 3vw, 2rem);
+    background: var(--colour-surface);
+    border-top: 1px solid var(--colour-border);
+    animation: project-reveal .22s ease-out;
+}
+
+    .project-card-content p {
+        margin-bottom: 1rem;
+        color: var(--colour-muted);
+        font-size: 1rem;
+        line-height: 1.8;
+    }
+
+    .project-card-content .project-intro {
+        max-width: 75rem;
+        margin-bottom: 1.75rem;
+        color: var(--colour-text);
+        font-size: 1.1rem;
+        line-height: 1.8;
+    }
+
+    .project-card-content h4 {
+        margin: 2rem 0 1rem;
+        color: var(--colour-text);
+        font-size: 1.2rem;
+        font-weight: 700;
+    }
+
+    .project-card-content ul {
+        margin: 0 0 1.5rem;
+        padding-left: 1.6rem;
+        color: var(--colour-muted);
+        font-size: 1rem;
+        line-height: 1.85;
+    }
+
+    .project-card-content li {
+        padding-left: .3rem;
+        margin-bottom: .65rem;
+    }
+
+        .project-card-content li::marker {
+            color: var(--colour-accent);
+        }
+
+    /* Technology labels */
+
+    .project-card-content .technology-line {
+        margin-top: 1.75rem;
+        margin-bottom: 0;
+        padding: 1rem 1.25rem;
+        color: var(--colour-accent) !important;
+        background: var(--colour-background);
+        border: 1px solid var(--colour-border);
+        border-left: 4px solid var(--colour-accent);
+        border-radius: .65rem;
+        font-size: .95rem;
+        font-weight: 650;
+        line-height: 1.8;
+        overflow-wrap: anywhere;
+    }
+
+/* =========================================
+   MERMAID DIAGRAM PANEL
+   ========================================= */
+
+.diagram-panel {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+    margin: 1rem 0 2rem;
+    color: #f4f8ff;
+    background: #081b2d;
+    border: 1px solid #205477;
+    border-radius: .9rem;
+    box-shadow: 0 12px 28px rgba(5, 20, 35, .2);
+}
+
+.diagram-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1rem 1.4rem;
+    color: #ffffff;
+    background: #102b43;
+    border-bottom: 1px solid #235574;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.diagram-type {
+    flex-shrink: 0;
+    color: #70d5ff;
+    font-size: .7rem;
+    font-weight: 700;
+    letter-spacing: .12em;
+}
+
+/* =========================================
+   MERMAID SCROLLABLE VIEWPORT
+   ========================================= */
+
+.mermaid-scroll {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 1.5rem;
+    overscroll-behavior-x: contain;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+    scrollbar-color: #397d9e #0b2238;
+}
+
+    /* Mermaid's rendered diagram container */
+
+    .mermaid-scroll .mermaid {
+        display: block;
+        width: max-content;
+        min-width: 0;
+        max-width: none !important;
+        margin: 0;
+        padding: 0;
+        overflow: visible;
+        color: #ffffff;
+        background: transparent !important;
+        font-family: "Segoe UI", Arial, sans-serif;
+        font-size: 18px;
+        line-height: 1.6;
+    }
+
+/* JavaScript-created diagram stage */
+
+.mermaid-stage {
+    display: block;
+    width: max-content;
+    max-width: none;
+}
+
+    /* Mermaid-generated SVG */
+
+    .mermaid-stage svg {
+        display: block;
+        max-width: none !important;
+        overflow: visible;
+    }
+
+/* Scrollbar */
+
+.mermaid-scroll::-webkit-scrollbar {
+    height: 10px;
+}
+
+.mermaid-scroll::-webkit-scrollbar-track {
+    background: #0b2238;
+    border-radius: 5px;
+}
+
+.mermaid-scroll::-webkit-scrollbar-thumb {
+    background: #397d9e;
+    border-radius: 5px;
+}
+
+    .mermaid-scroll::-webkit-scrollbar-thumb:hover {
+        background: #55c5ed;
+    }
+
+/* =========================================
+   DIAGRAM ZOOM CONTROLS
+   ========================================= */
+
+.diagram-controls {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: .5rem;
+    min-height: 48px;
+    padding: .5rem 1rem;
+    background: #0b2238;
+    border-bottom: 1px solid #235574;
+}
+
+.diagram-zoom-button {
+    display: inline-grid;
+    place-items: center;
+    min-width: 36px;
+    min-height: 34px;
+    padding: .3rem .65rem;
+    color: #eaf7ff;
+    background: #123b5a;
+    border: 1px solid #347fa5;
+    border-radius: .45rem;
+    font: inherit;
+    font-size: .85rem;
+    font-weight: 650;
+    cursor: pointer;
+    transition: background-color .2s ease, border-color .2s ease;
+}
+
+    .diagram-zoom-button:hover {
+        background: #1b587b;
+        border-color: #55c5ed;
+    }
+
+    .diagram-zoom-button:focus-visible {
+        outline: 2px solid #70d5ff;
+        outline-offset: 2px;
+    }
+
+.diagram-zoom-level {
+    min-width: 3.5rem;
+    color: #b9d4e9;
+    font-size: .8rem;
+    font-variant-numeric: tabular-nums;
+    text-align: center;
+}
+
+/* =========================================
+   PROJECT ANIMATION
+   ========================================= */
+
+@keyframes project-reveal {
+    from {
+        opacity: 0;
+        transform: translateY(-6px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =========================================
+   DARK MODE
+   ========================================= */
+
+@media (prefers-color-scheme: dark) {
+
+    .project-card {
+        background: var(--colour-surface);
+        border-color: var(--colour-border);
+    }
+
+    .project-card-content .technology-line {
+        background: #14263b;
+        border-color: #29445e;
+        border-left-color: var(--colour-accent);
+    }
+
+    .project-card:hover,
+    .project-card[open] {
+        box-shadow: 0 12px 30px rgba(0, 0, 0, .28);
+    }
+}
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media (max-width: 640px) {
+
+    .project-list {
+        gap: 1rem;
+    }
+
+    .project-card-summary {
+        min-height: 100px;
+        padding: 1.1rem 3.75rem 1.1rem 1rem;
+    }
+
+    .project-heading h3 {
+        font-size: 1.2rem;
+    }
+
+    .project-heading p {
+        font-size: .9rem;
+    }
+
+    .project-card-summary::after {
+        right: .85rem;
+        width: 32px;
+        height: 32px;
+    }
+
+    .project-card-content {
+        padding: 1rem;
+    }
+
+        .project-card-content .project-intro {
+            font-size: 1rem;
+        }
+
+        .project-card-content h4 {
+            margin-top: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        .project-card-content ul {
+            padding-left: 1.3rem;
+            font-size: .95rem;
+        }
+
+        .project-card-content .technology-line {
+            padding: .85rem;
+            font-size: .85rem;
+        }
+
+    .diagram-title {
+        padding: .85rem 1rem;
+        font-size: .9rem;
+    }
+
+    .diagram-controls {
+        justify-content: center;
+        gap: .4rem;
+        padding: .5rem;
+    }
+
+    .diagram-zoom-button {
+        min-width: 34px;
+        min-height: 34px;
+        padding: .25rem .55rem;
+    }
+
+    .mermaid-scroll {
+        padding: .75rem;
+    }
+}
+
+/* =========================================
+   REDUCED MOTION
+   ========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .project-card,
+    .project-card-summary::after,
+    .diagram-zoom-button {
+        transition: none;
+    }
+
+    .project-card-content {
+        animation: none;
+    }
+}
